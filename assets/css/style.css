@@ -1,0 +1,14 @@
+body{
+    background: url("../images/retina_wood.png"); 
+}
+.jumbotron-fluid{
+    margin: 70px;
+    height: 400px;
+    background-color: #D06149;
+}
+.display-4{
+    text-align: center;
+}
+.btn-block {
+    width: 50%;
+}
