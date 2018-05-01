@@ -3,7 +3,7 @@ body{
 }
 .jumbotron-fluid{
     margin: 70px;
-    height: 400px;
+    height: 500px;
     background-color: #D06149;
 }
 .display-4{
@@ -11,4 +11,11 @@ body{
 }
 .btn-block {
     width: 50%;
+    margin-left: 300px;
+    margin-top: 100px;
+    color: black;
+    background: url("../images/retina_wood.png"); 
+}
+.btn-primary{
+    border-color: black;
 }
