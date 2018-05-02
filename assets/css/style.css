@@ -1,21 +1,26 @@
 body{
-    background: url("../images/retina_wood.png"); 
+    background: url("../images/px_by_Gre3g.png"); 
 }
 .jumbotron-fluid{
     margin: 70px;
     height: 500px;
-    background-color: #D06149;
+    border-radius: 25px;
+    font-family: 'Abril Fatface';
 }
 .display-4{
     text-align: center;
+    font-family: 'Abril Fatface';
 }
 .btn-block {
     width: 50%;
-    margin-left: 300px;
-    margin-top: 100px;
-    color: black;
-    background: url("../images/retina_wood.png"); 
+    margin: 0 auto;
+    margin-top: 100px; 
 }
 .btn-primary{
-    border-color: black;
+    color: black;
+    border-color: blue;
+}
+#mainOne{
+    color: black;
+    margin: 0 auto;
 }
