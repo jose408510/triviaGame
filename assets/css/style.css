@@ -20,7 +20,14 @@ body{
     color: black;
     border-color: blue;
 }
-#mainOne{
+#choices{
+    color: red;
+}
+.btn-secondary {
+    background-color: #007bff;
+}
+/* #mainOne{
     color: black;
     margin: 0 auto;
-}
+} */
+
