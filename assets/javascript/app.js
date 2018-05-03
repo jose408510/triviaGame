@@ -41,8 +41,7 @@ $('#theClick').on("click", function(){
 // the first question
 function myQuest(myQuestion){
     var questionText = $('<p>').text(myQuestion.question);
-    append(questionText);
-    questionText.show();
+    $('#questions').append(questionText);
 }
 
 
