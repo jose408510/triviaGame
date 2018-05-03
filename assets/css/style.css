@@ -14,7 +14,7 @@ body{
 .btn-block {
     width: 50%;
     margin: 0 auto;
-    margin-top: 100px; 
+    margin-top: 40px; 
 }
 .btn-primary{
     color: black;
@@ -25,11 +25,14 @@ body{
 }
 .btn-secondary {
     background-color: #007bff;
+    color: black;   
 }
-/* #mainOne{
-    color: black;
-    margin: 0 auto;
-} */
+
 #choices{
     display: none;  
+}
+#questions{
+display: none;
+font-size: 25px;
+
 }

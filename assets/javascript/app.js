@@ -27,34 +27,64 @@ var myQuestion = [
  
     var time = 120;
     var timeCounter;
+    var wrongAnswer = false ; 
 function timer(){
-
+    
 }
 
 // the first click 
 $('#theClick').on("click", function(){
  alert("Get Ready Too Play");
  $('#theClick').remove();
- $('#choices').show();   
+ $('#choices').show(); 
 })  
 
 // the first question
-function myQuest(myQuestion){
-    var questionText = $('<p>').text(myQuestion.question);
-    $('#questions').append(questionText);
-}
-
-
-
-
-
-
-
-
-
-// for(var i = 0; i < time.lenght; i++){
-//  time(i).html('questions');    
+// function myQuest(firstOne){
+//     var questionText = $('<p>').text(firstOne.myQuestion[0]);
+//     $('#questions').append(questionText);
+//     $("#questions").show('helo');
 // }
 
-// make a true or false for start game 
-// add css to div choices 
+$('#questions').show(myQuestion[0].question, function(){
+    var letsTry = myQuestion[0].question;
+    letsTry = $('#questions').text(letsTry);
+    })
+
+
+
+
+
+$('#button1').show(myQuestion[0].choices[0], function(){
+var newPress = myQuestion[0].choices[0];
+newPress = $('#button1').html(newPress);
+console.log(newPress);
+})
+
+$('#button2').show(myQuestion[0].choices[1], function(){
+var secondPress = myQuestion[0].choices[1];
+secondPress = $('#button2').html(secondPress);
+console.log(secondPress);
+})
+
+$('#button3').show(myQuestion[0].choices[2], function(){
+var thirdPress = myQuestion[0].choices[2];
+thirdPress = $('#button3').html(thirdPress);
+console.log(thirdPress);
+})
+
+$('#button4').show(myQuestion[0].choices[3], function(){
+    var fourthPress = myQuestion[0].choices[3];
+    fourthPress = $('#button4').html(fourthPress);
+    console.log(fourthPress);
+})
+
+
+
+
+
+// $("#questions").text(myQuestion.question[0]);
+
+// for(var i = 0; i < choices.lenght; i++){
+//  choices(i).html('#button1');    
+// }
