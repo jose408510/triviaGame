@@ -25,17 +25,37 @@ var myQuestion = [
     answer: 4
     }];
  
+    var time = 120;
+    var timeCounter;
+function timer(){
+
+}
+
 // the first click 
 $('#theClick').on("click", function(){
- alert("yo");
+ alert("Get Ready Too Play");
  $('#theClick').remove();
+ $('#choices').show();   
 })  
 
+// the first question
+function myQuest(myQuestion){
+    var questionText = $('<p>').text(myQuestion.question);
+    append(questionText);
+    questionText.show();
+}
 
-$('#choices').remove("buttons");
 
 
 
-// ../images/retina_wood.png
-// /assets/images/loading.gif
 
+
+
+
+
+// for(var i = 0; i < time.lenght; i++){
+//  time(i).html('questions');    
+// }
+
+// make a true or false for start game 
+// add css to div choices 
