@@ -80,6 +80,7 @@ $('.answerButton').on('click', function(){
     function upcoming(){
         //  $('#choices').();
          $('#questions').html(myQuestion[questionCounter].question);
+         $('#choices').empty();
          for(var i = 0 ; i < myQuestion[questionCounter].choices.length; i++){
             $("#choices").append('<button type="button" class="btn btn-primary btn-lg btn-block answerButton" value='+i+'>'+myQuestion[questionCounter].choices[i]+'</button>');
         }
