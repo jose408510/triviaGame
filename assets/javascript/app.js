@@ -66,16 +66,20 @@ $('#theClick').on("click", function(){
  alert("Get Ready Too Play");
  $('#theClick').remove();
  $('#choices').show(); 
-//  $('#questions').html(myQuestion[0].question);
+ $('#questions').html(myQuestion[0].question);
+ for(var i = 0 ; i < myQuestion[questionCounter].choices.length; i++){
+    // $('#choices').html()
+    $("#choices").append('<button type="button" class="btn btn-primary btn-lg btn-block answerButton" value='+i+'>'+myQuestion[questionCounter].choices[i]+'</button>');
+}
 timeCounter = setInterval(timer, 1000);
 // upcoming();
 })  
 
 // the choices for the questions
-for(var i = 0 ; i < myQuestion[questionCounter].choices.length; i++){
-    // $('#choices').html()
-    $("#choices").append('<button type="button" class="btn btn-primary btn-lg btn-block answerButton" value='+i+'>'+myQuestion[questionCounter].choices[i]+'</button>');
-}
+// for(var i = 0 ; i < myQuestion[questionCounter].choices.length; i++){
+//     // $('#choices').html()
+//     $("#choices").append('<button type="button" class="btn btn-primary btn-lg btn-block answerButton" value='+i+'>'+myQuestion[questionCounter].choices[i]+'</button>');
+// } 
 $('.answerButton').on('click', function(){
     function upcoming(){
         //  $('#choices').();
