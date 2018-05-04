@@ -25,12 +25,19 @@ var myQuestion = [
     answer: 3
     }];
  
+    losses = 0;
     var questionCounter = 0;
     var wins =0;
     var timer = 100;
     var timeCounter;
     var wrongAnswer = false ; 
 
+    // function questionCounterIncrease(){
+    //     questionCounter++ ;
+
+
+
+    // }
 
 
 
@@ -44,30 +51,51 @@ function timer(){
 
 }
 
+// function upcoming(){
+// //  $('#choices').();
+//  $('#questions').html(myQuestion[questionCounter].question);
+//  for(var i = 0 ; i < myQuestion[questionCounter].choices.length; i++){
+//     $("#choices").append('<button type="button" class="btn btn-primary btn-lg btn-block answerButton" value='+i+'>'+myQuestion[questionCounter].choices[i]+'</button>');
+// }
+
+// }
+
+
 // the first click 
 $('#theClick').on("click", function(){
  alert("Get Ready Too Play");
  $('#theClick').remove();
  $('#choices').show(); 
- $('#questions').html(myQuestion[0].question);
+//  $('#questions').html(myQuestion[0].question);
 timeCounter = setInterval(timer, 1000);
+// upcoming();
 })  
-
-// question show
-// ('#questions').
-// $('#questions').show(myQuestion[0].question, function(){
-//     var letsTry = myQuestion[0].question;
-//     letsTry = $('#questions').text(letsTry);
-//     })
 
 // the choices for the questions
 for(var i = 0 ; i < myQuestion[questionCounter].choices.length; i++){
-    $("#choices").append('<button type="button" class="btn btn-primary btn-lg btn-block" value='+i+'>'+myQuestion[questionCounter].choices[i]+'</button>');
-    $('.btn').on('click', function(){
-        var value = $(this).attr("value");
-        if(value === myQuestion[0].answer){
-        wins++;
-        }
-        console.log(value);
-    })
+    // $('#choices').html()
+    $("#choices").append('<button type="button" class="btn btn-primary btn-lg btn-block answerButton" value='+i+'>'+myQuestion[questionCounter].choices[i]+'</button>');
 }
+$('.answerButton').on('click', function(){
+    function upcoming(){
+        //  $('#choices').();
+         $('#questions').html(myQuestion[questionCounter].question);
+         for(var i = 0 ; i < myQuestion[questionCounter].choices.length; i++){
+            $("#choices").append('<button type="button" class="btn btn-primary btn-lg btn-block answerButton" value='+i+'>'+myQuestion[questionCounter].choices[i]+'</button>');
+        }
+        
+        }
+    var value = parseInt($(this).attr("value"));
+
+    console.log(myQuestion[questionCounter].answer);
+    if(value === myQuestion[questionCounter].answer){
+    wins++; 
+    alert("correct" + wins);
+    }else{
+        losses++;
+        alert('Incorrect');
+    }
+    // console.log(value);
+    questionCounter++;
+    upcoming();
+})
