@@ -80,7 +80,7 @@ timeCounter = setInterval(timer, 1000);
 //     // $('#choices').html()
 //     $("#choices").append('<button type="button" class="btn btn-primary btn-lg btn-block answerButton" value='+i+'>'+myQuestion[questionCounter].choices[i]+'</button>');
 // } 
-$('.answerButton').on('click', function(){
+$(document).on('click', '.answerButton', function(){
     function upcoming(){
         //  $('#choices').();
          $('#questions').html(myQuestion[questionCounter].question);
@@ -101,6 +101,12 @@ $('.answerButton').on('click', function(){
         alert('Incorrect');
     }
     // console.log(value);
-    questionCounter++;
-    upcoming();
+    if( questionCounter < myQuestion.length - 1) {
+        questionCounter++;
+        upcoming();
+    } else {
+        console.log("Wins: " + wins);
+        alert("Game over");
+        // PRINT NEW SCREEN WITH SCORE
+    }
 })
