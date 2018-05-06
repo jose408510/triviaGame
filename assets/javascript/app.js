@@ -32,14 +32,6 @@ var myQuestion = [
     var timeCounter;
     var wrongAnswer = false ; 
 
-    // function questionCounterIncrease(){
-    //     questionCounter++ ;
-
-
-
-    // }
-
-
 
 function timer(){
     timer--;
@@ -50,15 +42,6 @@ function timer(){
     }
 
 }
-
-// function upcoming(){
-// //  $('#choices').();
-//  $('#questions').html(myQuestion[questionCounter].question);
-//  for(var i = 0 ; i < myQuestion[questionCounter].choices.length; i++){
-//     $("#choices").append('<button type="button" class="btn btn-primary btn-lg btn-block answerButton" value='+i+'>'+myQuestion[questionCounter].choices[i]+'</button>');
-// }
-
-// }
 
 
 // the first click 
@@ -72,14 +55,9 @@ $('#theClick').on("click", function(){
     $("#choices").append('<button type="button" class="btn btn-primary btn-lg btn-block answerButton" value='+i+'>'+myQuestion[questionCounter].choices[i]+'</button>');
 }
 timeCounter = setInterval(timer, 1000);
-// upcoming();
+
 })  
 
-// the choices for the questions
-// for(var i = 0 ; i < myQuestion[questionCounter].choices.length; i++){
-//     // $('#choices').html()
-//     $("#choices").append('<button type="button" class="btn btn-primary btn-lg btn-block answerButton" value='+i+'>'+myQuestion[questionCounter].choices[i]+'</button>');
-// } 
 $(document).on('click', '.answerButton', function(){
     function upcoming(){
         //  $('#choices').();
@@ -95,7 +73,7 @@ $(document).on('click', '.answerButton', function(){
     console.log(myQuestion[questionCounter].answer);
     if(value === myQuestion[questionCounter].answer){
     wins++; 
-    alert("correct" + wins);
+    alert("correct");
     }else{
         losses++;
         alert('Incorrect');
@@ -106,7 +84,7 @@ $(document).on('click', '.answerButton', function(){
         upcoming();
     } else {
         console.log("Wins: " + wins);
-        alert("Game over");
+        alert("Game over\nWins:" + wins + "\nlosses: " + losses);
         // PRINT NEW SCREEN WITH SCORE
     }
 })
