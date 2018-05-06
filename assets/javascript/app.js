@@ -28,20 +28,15 @@ var myQuestion = [
     losses = 0;
     var questionCounter = 0;
     var wins =0;
-    var timer = 100;
-    var timeCounter;
+    var timer = 0;
+    var timeCounter= [];
     var wrongAnswer = false ; 
 
 
-function timer(){
-    timer--;
-    $('#timer').text("Time Remaning " + timer);
-    if(timer === 0){
-        clearInterval(timeCounter);
-        console.log(timer)
+function myFunction() {
+    setInterval(function(){ 
+        $('#timer').html(timer);}, 1000);
     }
-
-}
 
 
 // the first click 
@@ -50,17 +45,16 @@ $('#theClick').on("click", function(){
  $('#theClick').remove();
  $('#choices').show(); 
  $('#questions').html(myQuestion[0].question);
+ myFunction();
  for(var i = 0 ; i < myQuestion[questionCounter].choices.length; i++){
-    // $('#choices').html()
     $("#choices").append('<button type="button" class="btn btn-primary btn-lg btn-block answerButton" value='+i+'>'+myQuestion[questionCounter].choices[i]+'</button>');
 }
-timeCounter = setInterval(timer, 1000);
+
 
 })  
 
 $(document).on('click', '.answerButton', function(){
     function upcoming(){
-        //  $('#choices').();
          $('#questions').html(myQuestion[questionCounter].question);
          $('#choices').empty();
          for(var i = 0 ; i < myQuestion[questionCounter].choices.length; i++){
