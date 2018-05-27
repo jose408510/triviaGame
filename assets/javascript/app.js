@@ -32,26 +32,48 @@ var myQuestion = [
     var timeCounter= [];
     var wrongAnswer = false ; 
 
-
-function myFunction() {
-    setInterval(function(){ 
-        $('#timer').html(timer);}, 1000);
-    }
-
-
 // the first click 
 $('#theClick').on("click", function(){
  alert("Get Ready Too Play");
  $('#theClick').remove();
  $('#choices').show(); 
  $('#questions').html(myQuestion[0].question);
- myFunction();
  for(var i = 0 ; i < myQuestion[questionCounter].choices.length; i++){
     $("#choices").append('<button type="button" class="btn btn-primary btn-lg btn-block answerButton" value='+i+'>'+myQuestion[questionCounter].choices[i]+'</button>');
+
 }
 
 
-})  
+
+})
+
+$('#theClick').on("click", function(){
+document.getElementById('timer').innerHTML =
+  01 + ":" + 00;
+startTimer();
+
+function startTimer() {
+  var presentTime = document.getElementById('timer').innerHTML;
+  var timeArray = presentTime.split(/[:]+/);
+  var m = timeArray[0];
+  var s = checkSecond((timeArray[1] - 1));
+  if(s==59){m=m-1}
+  if(m<0){alert('Game Over! Try Again!'), console.log("Wins: " + wins),
+  alert("Game over\nWins:" + wins + "\nlosses: " + losses)}
+  
+  document.getElementById('timer').innerHTML =
+    m + ":" + s;
+  setTimeout(startTimer, 1000);
+}
+});
+
+
+function checkSecond(sec) {
+  if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+  if (sec < 0) {sec = "59"};
+  return sec;
+}
+  
 
 $(document).on('click', '.answerButton', function(){
     function upcoming(){
@@ -82,3 +104,4 @@ $(document).on('click', '.answerButton', function(){
         // PRINT NEW SCREEN WITH SCORE
     }
 })
+
